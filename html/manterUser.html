@@ -14,9 +14,10 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <script src="https://kit.fontawesome.com/38b0ce0ee1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="shortcut icon" type="imagem/x-icon" href="../imagens/favicon.ico" />
+    <link rel="shortcut icon" type="imagem/x-icon" href="../img/favicon.ico" />
+
+    <script src="../js/manterUser.js"></script>
 
 </head>
 
@@ -25,10 +26,10 @@
 
     <main class="row">
         <div class="container col-6">
-            <h1>Cadastro</h1>
-            <form action="">
+            <h1>Sign up</h1>
+            <form action="#" id="signup-form">
                 <div class="input-login">
-                    <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Nome Completo   " required>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
                     <div class="underline"></div>
                 </div>
                 <div class="input-login">
@@ -36,25 +37,19 @@
                     <div class="underline"></div>
                 </div>
                 <div class="input-login">
-                    <input type="text" name="confirmaEmail" id="confirmaEmail" placeholder="Confirmação do E-mail"
+                    <input type="text" name="username" id="username" placeholder="Username"
                         required>
                     <div class="underline"></div>
                 </div>
                 <div class="input-login">
-                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
-                    <div class="underline"></div>
-                </div>
-                <div class="input-login">
-                    <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Confirmação da Senha"
-                        required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                     <div class="underline"></div>
                 </div>
                 <div class="input-checkbox">
                     <input type="checkbox" id="termos" name="termos" required>
-                    <label for="termos">Concordo com os <a href="">Termos de Serviço</a></label>
+                    <label for="termos">I agree with the <a href="">Service Terms</a></label>
                 </div>
-
-                <input class="botao" type="submit" value="Continue">
+                <input class="botao" id="botao" type="submit" value="Create Account">
             </form>
         </div>
     </main>
