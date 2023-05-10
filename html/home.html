@@ -17,7 +17,6 @@
             <table id="table-task">
                 <thead>
                 <tr class="table-task-col">
-                    <th>Name</th>
                 </tr>
                 </thead>
                 <tbody id="tabela-corpo"></tbody>
@@ -25,8 +24,10 @@
         </div>
         <div>
             <input class="bt-criar-tarefa" id="bt-criar-tarefa" type="submit" value="Create new Task">
+            <input class="bt-criar-tarefa" id="bt-config-user" type="submit" value="User Settings">
         </div>
     </div>
+
     <div class="container col-6" id="new-task-board" style="display: none">
         <h1>New Task</h1>
         <form action="#" id="new-task-form" class="new-task-form">
@@ -35,13 +36,42 @@
                 <div class="underline"></div>
             </div>
             <input class="botao" id="botao" type="submit" value="Create Task">
-            <input class="botao-back" id="botao-back" type="submit" value="Back to Menu">
+            <input class="botao-back" id="botao-back" type="text" value="Back to Menu">
         </form>
     </div>
-    <div class="container col-6" id="delete-modal" style="display: none">
-        <h1>Delete Task</h1>
 
+    <div class="container col-6" id="task-modal" style="display: none">
+        <h1>Task</h1>
+        <form action="#" id="task-form" class="task-form">
+            <div class="input-login">
+                <span>Id</span>
+                <input type="text" placeholder="Id" disabled>
+                <input type="hidden" name="id" id="idTask">
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <span>Name</span>
+                <input type="text" name="name" id="nameTask" placeholder="Name" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <span>Date</span>
+                <input type="text" name="date" id="dateTask" placeholder="Date" disabled>
+                <div class="underline"></div>
+            </div>
+            <span>Status</span>
+            <div class="input-login">
+                <select name="realized" id="statusTask">
+                    <option value="0">To do</option>
+                    <option value="1">Done</option>
+                </select>
+                <div class="underline"></div>
+            </div>
+            <input class="botao"  type="submit" value="Update Task">
+            <input class="botao-back" type="text" value="Back to Menu">
+        </form>
     </div>
+
 </main>
 </body>
 </html>

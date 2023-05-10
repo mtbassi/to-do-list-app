@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const url = 'https://todolist-api.edsonmelo.com.br/api';
     const login = '../html/login.html'
+    let _self = this;
 
     const formEl = document.getElementById('signup-form');
     formEl.addEventListener('submit', function(event) {
@@ -8,10 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(formEl);
         formData.delete('termos');
         const data = Object.fromEntries(formData);
-        cadastrar(data);
+        _self.cadastrar(data);
     });
 
-    function cadastrar(body) {
+    this.cadastrar = function (body) {
+
         var endpoint = '/user/new/';
         fetch(url + endpoint, {
             method: 'POST',
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             throw new Error('Erro ao consumir a API.');
         }).then(data => {
             console.log(data);
+            console.log(body);
             window.location.href = login;
         }).catch(error => {
             console.error('Erro ao consumir a API', error);

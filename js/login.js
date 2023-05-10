@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }).then(data => {
             if (data.token != null){
-                window.location.href = home + '?token=' + data.token;
-                _self.pesquisar()
-
+                sessionStorage.setItem('data', JSON.stringify(data));
+                window.location.href = home;
             }else{
+                console.log(data)
                 console.error(data.message);
             }
         }).catch(error => {

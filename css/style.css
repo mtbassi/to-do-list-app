@@ -27,11 +27,12 @@ body {
     max-height: 80vh;
     padding: 2rem;
     border-radius: 15px;
+    overflow-y: scroll;
 }
 
 h1 {
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     position: relative;
 }
 
@@ -118,8 +119,7 @@ form {
     width: 100%;
 }
 
-.botao-back,
-#bt-udapte {
+.botao-back {
     margin-top: 1.2rem;
     padding: 0.4rem;
     background: linear-gradient(45deg, #9f9f9f, #888888);
@@ -128,16 +128,45 @@ form {
     font-weight: 500;
     border-radius: 4px;
     transition: all 0.5s ease;
+    text-align: center;
 }
 
-.botao-back:hover {
+.btn-edit-doing {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #9f9f9f, #888888);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    width: 285px;
+    text-align: left;
+}
+
+.btn-edit-done {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #3BA775, #2f9163);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    width: 285px;
+    text-align: left;
+}
+
+.botao-back:hover,
+.btn-edit-doing:hover {
     background: linear-gradient(45deg, #888888, #9f9f9f);
     cursor: pointer;
 }
 
 .botao:hover,
 .botao-nova-conta:hover,
-.bt-criar-tarefa:hover {
+.bt-criar-tarefa:hover,
+.btn-edit-done:hover {
     background: linear-gradient(45deg, #2f9163, #3BA775);
     cursor: pointer;
 }
@@ -152,6 +181,11 @@ form {
     color: #2b2b2b;
     font-size: 0.8rem;
     text-align: center;
+}
+
+.task-form span {
+    color: #2b2b2b;
+    font-size: 0.8rem;
 }
 
 .botoes-reset {
@@ -187,16 +221,15 @@ form {
     min-width: 100vh;
 }
 
-#conteudo {
-    border: 1px solid #9f9f9f;
+.tabela-corpo{
+    min-width: 100%;
 }
 
-thead > tr > th {
-    padding: 0 1rem;
-    font-weight: normal;
-    border: solid 2px #9f9f9f;
+tbody > tr > td > img {
+    cursor: pointer;
+    width: 16px;
 }
 
-tbody > tr > td {
-    text-align: center;
+select {
+    background-color: #fafafa;
 }
