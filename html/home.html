@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Board</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+            integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" type="imagem/x-icon" href="../img/favicon.ico"/>
+</head>
+<body>
+<main class="row">
+    <div class="container col-6" id="task-board">
+        <h1>Task Board</h1>
+        <div id="table-container" class="conteudo">
+            <table id="table-task">
+                <thead>
+                <tr class="table-task-col">
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody id="tabela-corpo"></tbody>
+            </table>
+        </div>
+        <div>
+            <input class="bt-criar-tarefa" id="bt-criar-tarefa" type="submit" value="Create new Task">
+        </div>
+    </div>
+    <div class="container col-6" id="new-task-board" style="display: none">
+        <h1>New Task</h1>
+        <form action="#" id="new-task-form" class="new-task-form">
+            <div class="input-login">
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <div class="underline"></div>
+            </div>
+            <input class="botao" id="botao" type="submit" value="Create Task">
+            <input class="botao-back" id="botao-back" type="submit" value="Back to Menu">
+        </form>
+    </div>
+    <div class="container col-6" id="delete-modal" style="display: none">
+        <h1>Delete Task</h1>
+
+    </div>
+</main>
+</body>
+</html>

@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const url = 'https://todolist-api.edsonmelo.com.br/api';
-    const login = '../html/login.html'
+    const home = '../html/home.html'
+    var _self = this;
 
-    const formEl = document.getElementById('signup-form');
+    const formEl = document.getElementById('signin-form');
     formEl.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(formEl);
-        formData.delete('termos');
         const data = Object.fromEntries(formData);
-        cadastrar(data);
+        login(data);
     });
 
-    function cadastrar(body) {
-        var endpoint = '/user/new/';
+    function login(body) {
+        var endpoint = '/user/login/';
         fetch(url + endpoint, {
             method: 'POST',
             body: JSON.stringify(body),
@@ -22,11 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }).then(response => {
             if (response.ok) {
                 return response.json();
+            } else if (response.status === 404) {
+                throw new Error('Not found.');
+            } else {
+                throw new Error('Erro ao consumir a API.');
             }
-            throw new Error('Erro ao consumir a API.');
         }).then(data => {
-            console.log(data);
-            window.location.href = login;
+            if (data.token != null){
+                window.location.href = home + '?token=' + data.token;
+                _self.pesquisar()
+
+            }else{
+                console.error(data.message);
+            }
         }).catch(error => {
             console.error('Erro ao consumir a API', error);
         });
