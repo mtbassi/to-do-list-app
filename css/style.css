@@ -22,15 +22,17 @@ body {
 
 .container {
     background: #fafafa;
-    min-width: 350px;
+    max-width: 350px;
     min-height: 40vh;
+    max-height: 80vh;
     padding: 2rem;
     border-radius: 15px;
+    overflow-y: scroll;
 }
 
 h1 {
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     position: relative;
 }
 
@@ -39,6 +41,23 @@ h1::before {
     position: absolute;
     height: 6px;
     width: 34px;
+    bottom: 1px;
+    left: 0;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #3BA775, #2f9163);
+}
+
+h3 {
+    font-weight: normal;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+h3::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 25px;
     bottom: 1px;
     left: 0;
     border-radius: 8px;
@@ -82,7 +101,7 @@ form {
     transform-origin: left;
 }
 
-.input-login input:focus~.underline::after {
+.input-login input:focus ~ .underline::after {
     transform: scaleX(1);
 
 }
@@ -104,21 +123,92 @@ form {
     color: #2b2b2b98;
 }
 
-.botao {
-    margin-top: 1.5rem;
+.botao,
+.bt-criar-tarefa {
+    margin-top: 0.8rem;
     padding: 0.4rem;
-    cursor: pointer;
     background: linear-gradient(45deg, #3BA775, #2f9163);
     color: #fafafa;
     font-size: 0.9rem;
     font-weight: 500;
     border-radius: 4px;
     transition: all 0.5s ease;
+    width: 285px;
+    text-align: center;
+}
+
+.botao-delete,
+.botao-delete-account{
+    margin-top: 0.8rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #a73b3b, #912f2f);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    width: 100%;
+    text-align: center;
+    width: 285px;
+}
+
+.botao-delete:hover,
+.botao-delete-account:hover {
+    background: linear-gradient(45deg, #912f2f, #a73b3b);
+    cursor: pointer;
+}
+
+.botao-back {
+    margin-top: 0.8rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #9f9f9f, #888888);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    text-align: center;
+    width: 285px;
+}
+
+.btn-edit-doing {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #9f9f9f, #888888);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    width: 285px;
+    text-align: left;
+}
+
+.btn-edit-done {
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    background: linear-gradient(45deg, #3BA775, #2f9163);
+    color: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    width: 285px;
+    text-align: left;
+}
+
+.botao-back:hover,
+.btn-edit-doing:hover {
+    background: linear-gradient(45deg, #888888, #9f9f9f);
+    cursor: pointer;
 }
 
 .botao:hover,
-.botao-nova-conta:hover {
+.botao-nova-conta:hover,
+.bt-criar-tarefa:hover,
+.btn-edit-done:hover {
     background: linear-gradient(45deg, #2f9163, #3BA775);
+    cursor: pointer;
 }
 
 .footer {
@@ -130,8 +220,13 @@ form {
 .footer span {
     color: #2b2b2b;
     font-size: 0.8rem;
-    font-weight: 500;
     text-align: center;
+}
+
+.task-form span,
+.new-task-form span{
+    color: #2b2b2b;
+    font-size: 0.8rem;
 }
 
 .botoes-reset {
@@ -161,4 +256,26 @@ form {
     font-weight: 500;
     border-radius: 4px;
     transition: all 0.3s ease;
+}
+
+.task-board {
+    min-width: 100vh;
+}
+
+.tabela-corpo{
+    min-width: 100%;
+}
+
+tbody > tr > td > img {
+    cursor: pointer;
+    width: 16px;
+}
+
+select {
+    background-color: #fafafa;
+}
+
+.modal-btn {
+    display: flex;
+    flex-direction: column;
 }
