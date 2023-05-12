@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Board</title>
+    <title>To do List</title>
     <script src="https://code.jquery.com/jquery-3.6.4.js"
             integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="../js/home.js"></script>
@@ -22,7 +22,7 @@
                 <tbody id="tabela-corpo"></tbody>
             </table>
         </div>
-        <div>
+        <div class="modal-btn">
             <input class="bt-criar-tarefa" id="bt-criar-tarefa" type="submit" value="Create new Task">
             <input class="bt-criar-tarefa" id="bt-config-user" type="submit" value="User Settings">
         </div>
@@ -43,12 +43,8 @@
     <div class="container col-6" id="task-modal" style="display: none">
         <h1>Task</h1>
         <form action="#" id="task-form" class="task-form">
-            <div class="input-login">
-                <span>Id</span>
-                <input type="text" placeholder="Id" disabled>
-                <input type="hidden" name="id" id="idTask">
-                <div class="underline"></div>
-            </div>
+            <input type="hidden" placeholder="Id" disabled>
+            <input type="hidden" name="id" id="idTask">
             <div class="input-login">
                 <span>Name</span>
                 <input type="text" name="name" id="nameTask" placeholder="Name" required>
@@ -67,7 +63,97 @@
                 </select>
                 <div class="underline"></div>
             </div>
-            <input class="botao"  type="submit" value="Update Task">
+            <input class="botao" type="submit" value="Update Task">
+            <input class="botao-delete" type="text" value="Delete">
+            <input class="botao-back" type="text" value="Back to Menu">
+        </form>
+    </div>
+
+    <div class="container col-6" id="delete-task-modal" style="display: none">
+        <h1>Confirm Deletion</h1>
+        <input class="botao" id="bt-delete-tarefa" type="submit" value="Confirm Deletion">
+        <input class="botao-back" type="text" value="Cancel">
+    </div>
+
+    <div class="container col-6" id="setting-user-modal" style="display: none">
+        <h1>Settings</h1>
+        <input class="botao" id="bt-profile-user" type="text" value="My Profile">
+        <input class="botao" id="bt-security-user" type="text" value="Secutiry">
+        <input class="botao-back" type="text" value="Back to Menu">
+        <input class="botao-delete-account" type="text" value="Delete Account">
+    </div>
+
+    <div class="container col-6" id="profile-user-board" style="display: none">
+        <h1>My Profile</h1>
+        <form action="#" id="profile-user-form" class="new-task-form">
+            <div class="input-login">
+                <span>Name</span>
+                <input type="text" name="name" id="nameUser" placeholder="Name" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <span>E-mail</span>
+                <input type="email" name="email" id="emailUser" placeholder="E-mail" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <span>Picture</span>
+                <input type="url" name="picture" id="pictureUser" placeholder="Picture">
+                <div class="underline"></div>
+            </div>
+            <h3>Confirm your Username and Password</h3>
+            <div class="input-login">
+                <input type="text" name="username" id="usernameUser" placeholder="Username" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <input type="password" name="password" id="passwordUser" placeholder="Password" required>
+                <div class="underline"></div>
+            </div>
+            <input class="botao" type="submit" value="Update User">
+            <input class="botao-back" type="text" value="Back to Menu">
+        </form>
+    </div>
+
+    <div class="container col-6" id="security-user-board" style="display: none">
+        <h1>Security</h1>
+        <form action="#" id="security-user-form" class="new-task-form">
+            <h3>Confirm your Username and Password</h3>
+            <div class="input-login">
+                <input type="text" name="username" id="thisUsernameUser" placeholder="Username" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <input type="password" name="password" id="thisPasswordUser" placeholder="Password" required>
+                <div class="underline"></div>
+            </div>
+            <h3>New Username and Password</h3>
+            <div class="input-login">
+                <input type="text" name="new_username" id="newUsernameUser" placeholder="Username" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <input type="password" name="new_password" id="newPasswordUser" placeholder="Password" required>
+                <div class="underline"></div>
+            </div>
+            <input class="botao" type="submit" value="Update Login">
+            <input class="botao-back" type="text" value="Back to Menu">
+        </form>
+    </div>
+
+    <div class="container col-6" id="delete-user-board" style="display: none">
+        <h1>Delete account</h1>
+        <form action="#" id="delete-user-form" class="new-task-form">
+            <h3>Confirm your Username and Password</h3>
+            <div class="input-login">
+                <input type="text" name="username" id="deleteUsernameUser" placeholder="Username" required>
+                <div class="underline"></div>
+            </div>
+            <div class="input-login">
+                <input type="text" name="password" id="deletePasswordUser" placeholder="Password" required>
+                <div class="underline"></div>
+            </div>
+            <input class="botao" id="bt-delete-user" type="submit" value="Confirm Deletion">
             <input class="botao-back" type="text" value="Back to Menu">
         </form>
     </div>

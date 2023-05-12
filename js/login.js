@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const url = 'https://todolist-api.edsonmelo.com.br/api';
     const home = '../html/home.html'
     var _self = this;
 
     const formEl = document.getElementById('signin-form');
-    formEl.addEventListener('submit', function(event) {
+    formEl.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(formEl);
         const data = Object.fromEntries(formData);
@@ -28,11 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Erro ao consumir a API.');
             }
         }).then(data => {
-            if (data.token != null){
+            if (data.token != null) {
                 sessionStorage.setItem('data', JSON.stringify(data));
                 window.location.href = home;
-            }else{
-                console.log(data)
+            } else {
                 console.error(data.message);
             }
         }).catch(error => {
